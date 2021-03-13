@@ -2,7 +2,12 @@ package com.microservicemall.mallcoupon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+/**
+ * @author younger
+ */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class MallCouponApplication {
 

@@ -1,6 +1,7 @@
 package com.microservicemall.mallproduct.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -32,14 +33,14 @@ public class CategoryController {
     private CategoryService categoryService;
 
     /**
-     * 列表
+     * 获取结果树
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list/tree")
 
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
+    public R list(){
+        List<CategoryEntity> categoryEntityList = categoryService.listTree();
 
-        return R.ok().put("page", page);
+        return R.ok().put("data", categoryEntityList);
     }
 
 
